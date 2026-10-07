@@ -1,0 +1,19 @@
+Test Case ID,Module,Test Scenario,Test Data,Precondition/Input,Expected Result,Priority,Execution Status
+TC001,Registration,Verify user can register with valid details,Aditi Sharma,"Valid name, email and password",Account is created successfully,High,Pass
+TC002,Registration,Verify registration rejects invalid email format,Aditi Sharma / aditi.sharma,Email without valid domain format,Validation message is displayed,Medium,Pass
+TC003,Registration,Verify registration rejects weak password,Aditi Sharma / aditi2@example.com / 123,Password below minimum rule,Password validation message is displayed,Medium,Pass
+TC004,Registration,Verify duplicate email cannot be registered,Existing user email,Existing registered email,Duplicate account message is displayed,High,Pass
+TC005,Login,Verify login with valid credentials,Aditi Sharma / Test@1234,Registered credentials,User is logged in and redirected to home page,High,Pass
+TC006,Login,Verify login fails with invalid password,Aditi Sharma / Wrong@123,Invalid password,Error message is displayed and login is denied,High,Pass
+TC007,Search,Verify product search returns matching products,Wireless headphones,Search keyword,Relevant products are displayed,High,Pass
+TC008,Search,Verify search with no matching product,xyz-no-product-999,Invalid/non-existing keyword,No products found message is displayed,Medium,Fail
+TC009,Product Details,Verify product details page shows correct information,Wireless Headphones,Open product details,"Name, price, image and description are displayed",High,Pass
+TC010,Cart,Verify product can be added to cart,Wireless Headphones,Click Add to Cart,Selected product appears in cart,High,Pass
+TC011,Cart,Verify cart quantity can be increased,Wireless Headphones,Change quantity from 1 to 2,Quantity and total price update correctly,High,Fail
+TC012,Cart,Verify product can be removed from cart,Wireless Headphones,Click Remove,Product is removed and cart total updates,High,Pass
+TC013,Checkout,Verify checkout cannot continue without required address,Cart contains product,Leave address blank,Required-field validation is displayed,High,Pass
+TC014,Checkout,Verify valid checkout creates order,Valid address and payment details,Complete checkout,Order is created successfully,High,Pass
+TC015,Order,Verify order confirmation displays order number,Completed order,Open confirmation,Unique order number and summary are displayed,High,Pass
+TC016,Logout,Verify user can logout successfully,Logged-in user,Click Logout,User is logged out and protected page is inaccessible,Medium,Pass
+TC017,Regression,Verify cart contents remain after navigating back to product page,Product added to cart,Navigate product -> cart -> product,Previously added cart item remains available,Medium,Fail
+TC018,Regression,Verify login -> search -> cart -> checkout critical flow,Valid user and product,Execute end-to-end flow,Complete critical flow works without functional errors,High,Fail

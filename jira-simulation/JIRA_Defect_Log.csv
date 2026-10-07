@@ -1,0 +1,5 @@
+Issue Key,Issue Type,Summary,Priority,Severity,Status,Reporter,Linked Test Case
+SS-001,Bug,Search returns blank page instead of no-results message,Medium,Medium,Open,QA Tester,TC008
+SS-002,Bug,Cart total does not update when quantity is increased,High,High,Open,QA Tester,TC011
+SS-003,Bug,Cart item is lost after navigating back to product page,Medium,Medium,Open,QA Tester,TC017
+SS-004,Bug,Checkout flow fails during valid end-to-end purchase,High,High,Open,QA Tester,TC018

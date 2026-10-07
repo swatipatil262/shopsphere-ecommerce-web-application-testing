@@ -1,0 +1,5 @@
+Defect ID,Summary,Module,Steps / Scenario,Expected Result,Actual Result,Severity,Priority,Status,Linked Test Case
+SS-001,Search returns blank page instead of no-results message,Search,Enter 'xyz-no-product-999' and submit search,No matching products message should be displayed,Blank product area is shown and no user-friendly message appears,Medium,Medium,Open,TC008
+SS-002,Cart total does not update when quantity is increased,Cart,Add product and change quantity from 1 to 2,Quantity and total price should update correctly,Quantity changes but total remains unchanged,High,High,Open,TC011
+SS-003,Cart item is lost after navigating back to product page,Cart/Navigation,"Add item, open cart, navigate back to product page, return to cart",Previously added item should remain in cart,Cart becomes empty after navigation sequence,Medium,Medium,Open,TC017
+SS-004,Checkout flow fails during valid end-to-end purchase,Checkout,"Login, search product, add to cart, enter valid address and complete checkout",Valid customer should be able to complete checkout,Checkout returns an error and order is not created,High,High,Open,TC018

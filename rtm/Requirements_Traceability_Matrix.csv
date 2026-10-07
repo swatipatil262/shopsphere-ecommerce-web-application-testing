@@ -1,0 +1,10 @@
+Requirement ID,Requirement,Test Case IDs,Coverage
+REQ-001,User registration,"TC001, TC002, TC003, TC004",Covered
+REQ-002,User login,"TC005, TC006",Covered
+REQ-003,Product search,"TC007, TC008",Covered
+REQ-004,Product details,TC009,Covered
+REQ-005,Cart management,"TC010, TC011, TC012, TC017",Covered
+REQ-006,Checkout validation,"TC013, TC014",Covered
+REQ-007,Order confirmation,TC015,Covered
+REQ-008,Logout,TC016,Covered
+REQ-009,Critical purchase flow regression,TC018,Covered

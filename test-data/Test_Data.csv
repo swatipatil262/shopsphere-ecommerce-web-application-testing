@@ -1,0 +1,9 @@
+Test Data ID,Scenario,Name,Email,Password,Purpose
+TD001,Valid user,Aditi Sharma,aditi.sharma@example.com,Test@1234,Valid registration/login
+TD002,Invalid email,Aditi Sharma,aditi.sharma,Test@1234,Email validation
+TD003,Weak password,Aditi Sharma,aditi2@example.com,123,Password validation
+TD004,Existing user,Aditi Sharma,aditi.sharma@example.com,Test@1234,Duplicate registration
+TD005,Valid search,,,,Search: wireless headphones
+TD006,No-result search,,,,Search: xyz-no-product-999
+TD007,Valid product,,,,Wireless Headphones
+TD008,Valid checkout,Aditi Sharma,aditi.sharma@example.com,Test@1234,Address and payment test data

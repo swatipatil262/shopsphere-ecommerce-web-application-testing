@@ -1,0 +1,120 @@
+{
+  "info": {
+    "_postman_id": "a8f9e1b0-6f44-4b3c-9f9b-2b7e4c9f1234",
+    "name": "ShopSphere - Basic API Testing",
+    "description": "Portfolio practice collection for ShopSphere. Uses DummyJSON public demo endpoints so the collection can be executed without a private backend.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://dummyjson.com"
+    }
+  ],
+  "item": [
+    {
+      "name": "API-001 Get Product",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/products/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "products",
+            "1"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Response contains product id', function () { pm.expect(pm.response.json()).to.have.property('id'); });",
+              "pm.test('Response contains product title', function () { pm.expect(pm.response.json()).to.have.property('title'); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-002 Get Products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/products?limit=5",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "products"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "5"
+            }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Products array is returned', function () { pm.expect(pm.response.json().products).to.be.an('array'); });",
+              "pm.test('At least one product is returned', function () { pm.expect(pm.response.json().products.length).to.be.above(0); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API-003 Add Cart",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": 1,\n  \"products\": [\n    {\"id\": 1, \"quantity\": 1}\n  ]\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/carts/add",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "carts",
+            "add"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 201', function () { pm.response.to.have.status(201); });",
+              "pm.test('Response contains cart id', function () { pm.expect(pm.response.json()).to.have.property('id'); });",
+              "pm.test('Response contains user id', function () { pm.expect(pm.response.json()).to.have.property('userId'); });"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
